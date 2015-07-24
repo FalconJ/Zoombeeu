@@ -73,7 +73,7 @@ function getMessages() {
 }
 
 function updateView(messages) {
-	var table=$(".table tbody");
+	var table=$("<div class='container'>");
 	table.html('');
 	$.each(messages.results, function (index, value) {
 		var trEl=$('<tr><td>'+value.username+'</td><td>'+value.message+'</td></tr>');

@@ -33,8 +33,13 @@
 
   window.fbAsyncInit = function() {
   FB.init({
+<<<<<<< HEAD
     appId      : '1634773586792118s',
     //appId      : '1634771786792298', sergio
+=======
+    //appId      : '1634712216798255',
+    appId      : '1634771786792298',
+>>>>>>> 1463809e21cc84dbf1ea0618ef9a6caf3f7cadeb
     cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
@@ -72,13 +77,8 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     FB.api('/me', {fields: 'id,name,email,first_name,last_name,gender'}, function(response) {
-      var user = getUser(response.email);
-      if(user === null) {
-        saveUser(response);
-        window.location.href = "profile.html";
-      } else {
-        window.location.href = "pantallabusqueda.html";
-      }
+
+
       //Array that stores users info
       fbinfo = new Array();
 
@@ -87,7 +87,16 @@
           fbinfo.push(response[property]);
         }
       }
-      fbinfo.push('https://graph.facebook.com/' + response.id + '/picture?type=large')
+      fbinfo.push('https://graph.facebook.com/' + response.id + '/picture?type=large');
+      var user = getUser(response.email);
+      console.log('llegue');
+      console.log(user);
+      if(user === null) {
+        saveUser(response);
+        //window.location.href = "profile.html";
+      } else {
+        //window.location.href = "pantallabusqueda.html";
+      }
 
       console.log(fbinfo);
     });
