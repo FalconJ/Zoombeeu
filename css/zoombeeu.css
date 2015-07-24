@@ -40,3 +40,50 @@
     background-color: #fff;
     color: #3b5998;
 }
+
+@media (min-width: 0) {
+  .navbar-toggle {
+    display: block; /* force showing the toggle */
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0;
+  }
+  .navbar {
+    right: auto;
+    background: none;
+    border: none;
+  }
+
+}
+
+.header-secondary-nav {
+
+    margin-right: 16px;
+    float: right;
+
+}
+
+.header {
+    background: #5cb85c none repeat scroll 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+    color: #fff;
+    height: 64px;
+    left: 0;
+    line-height: 64px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 50;
+}
+
+.canvas {
+  position: relative;
+  left: 0;
+  z-index: 2;
+  min-height: 100%;
+  padding: 50px 0 0 0;
+  background: #fff;
+}
