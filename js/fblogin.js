@@ -86,7 +86,7 @@
       console.log('llegue');
       console.log(user);
       console.log(fbinfo);
-      
+
       if(user === null) {
         saveUser(response);
         window.location.href = "profile.html";
@@ -95,3 +95,10 @@
       }
     });
   }
+
+  $('#boton').on('click', function()
+  {
+    FB.logout(function(response) {
+              // user is now logged out
+        });
+  });
