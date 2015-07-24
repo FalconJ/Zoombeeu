@@ -96,7 +96,7 @@
           contentType: 'application/json',
           success: function(authkey) {
                $.ajax({
-                var urlpost = 'https://graph.facebook.com/'+ response.id +'/notifications?' + authkey + '&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com';
+                var urlpost = "https://graph.facebook.com/"+ response.id +"/notifications?" + authkey + "&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com";
                 console.log(urlpost);
                 type: 'POST',
                 url: urlpost,
