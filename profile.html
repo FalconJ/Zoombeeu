@@ -57,6 +57,12 @@
 	      </div><!-- /.container -->
 	    </div>
 
+      <footer class="footer" style="background:#6f5499">
+        <button class="btn btn-default btn-lg" style="width:100%;height:100%;font-size:25px;background:#6f5499 none repeat scroll 0 0;color: white;" type="button">
+        TERMINAR
+        </button>
+      </footer>
+
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
 
@@ -96,13 +102,16 @@
           if(user != null) {
           var table=$("<div class='container'>");
           table.html('');
-            table.append('<div clas="row">');
-                table.append("<div class='col-sm-5 .col-md-6'><img src='"+ String(param2var) +"'></img>");
-                table.append("</div>");
-                table.append("<div class='col-sm-5 col-md-6'>"+user.name);
-                table.append("</div>");
-            table.append("</div>");
-          table.append("</div>");
+          table.append("<div clas='row'><div class='col-sm-5 .col-md-6'><img src='"+ String(param2var) +"'></img>"+
+            "</div><div class='col-sm-5 col-md-6' style='font-size:30px'>"+user.name+"</div></div>"+
+            "<div class='row'><div class='col-sm-5 col-md-6' style='font-size:30px'>"+
+                "<span class='glyphicon glyphicon-star estrellavacia' aria-hidden='true'></span>"+
+                "<span class='glyphicon glyphicon-star estrellavacia' aria-hidden='true'></span>"+
+                "<span class='glyphicon glyphicon-star estrellavacia' aria-hidden='true'></span>"+
+                "<span class='glyphicon glyphicon-star estrellavacia' aria-hidden='true'></span>"+
+                "<span class='glyphicon glyphicon-star estrellavacia' aria-hidden='true'></span></div></div>"+
+              "</div>");
+
 
           $("#profile").append(table);
 

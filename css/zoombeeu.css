@@ -153,3 +153,12 @@ section {
 section {
     padding: 250px 0;
 }
+
+.footer {
+    background-color: #6f5499;
+    bottom: 0;
+    height: 60px;
+    position: absolute;
+    width: 100%;
+    top: 725px;
+}
