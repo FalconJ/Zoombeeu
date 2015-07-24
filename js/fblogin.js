@@ -88,7 +88,7 @@
           if(user.results[0] == null) {
 
             saveUser(response, function() {
-              window.location.href = "profile.html?email="+response.email+"&picture="+fbinfo[fbinfo.length-1];
+              window.location.href = "profile.html?email="+user.results[0].email+"&picture="+fbinfo[fbinfo.length-1];
       });
  
       } else {
