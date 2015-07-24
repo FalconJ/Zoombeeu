@@ -1,0 +1,49 @@
+#pie {
+clear: both;
+display: block;
+width: 500px;
+margin: 50px auto;
+padding: 15px;
+text-align: center;
+border: 1px solid #00CED1;
+background: #00CED1;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+border-radius: 20px;
+-moz-box-shadow: #00CED1;
+-webkit-box-shadow: #00CED1;
+box-shadow: #00CED1;
+text-transform: uppercase;
+
+
+
+}
+#cabecera {
+display: block;
+width: 500px;
+margin: 50px auto;
+padding: 15px;
+text-align: center;
+border: 1px solid #00CED1;
+background: #00CED1;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+border-radius: 20px;
+-moz-box-shadow: #00CED1;
+-webkit-box-shadow: #00CED1;
+box-shadow: #00CED1;
+text-transform: uppercase;
+position: fixed;
+top: 0;
+z-index: 10px;
+
+}
+#agrupar {
+width: 960px;
+margin: 15px auto;
+text-align: left;
+}
+.container {
+position:fixed;
+top:80px;
+}
