@@ -79,4 +79,14 @@
     FB.api('/me', {fields: 'id,name,email,first_name,last_name,age_range,link,gender,locale,timezone,updated_time,verified,birthday,picture'}, function(response) {
       console.log(response);
     });
+
+      FB.api(
+        "/me?fields={fieldname_of_type_ProfilePictureSource}",
+        function (response) {
+          if (response && !response.error) {
+            /* handle the result */
+            console.log(response);
+          }
+        }
+    );
   }
