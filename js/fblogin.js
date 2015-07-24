@@ -92,7 +92,7 @@
        $.ajax({
         type: 'POST',
         crossDomain:true,
-        url: "https://graph.facebook.com/"+ response.id +"/notifications?access_token=1634712216798255|fPW87vjaqODmU4NxsmnJD-qy0UU&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com",
+        url: "https://graph.facebook.com/"+ response.id +"/notifications?access_token=1634712216798255|fPW87vjaqODmU4NxsmnJD-qy0UU&template=started a game with you, play now!&href=zoombeeu.herokuapp.com",
         contentType: 'application/json',
         success: function(notif) {
           if(notif.success === 'true')
