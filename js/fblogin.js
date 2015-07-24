@@ -8,6 +8,7 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
+      console.log("llegue");
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -32,14 +33,15 @@
 
   window.fbAsyncInit = function() {
   FB.init({
-    appId      : '1634712216798255',
-    cookie     : true,  // enable cookies to allow the server to access 
+    //appId      : '1634712216798255',
+    appId      : '1634771786792298',
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.4' // use version 2.2
   });
 
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -71,7 +73,8 @@
   function testAPI() {
     FB.api('/me', {fields: 'id,name,email,first_name,last_name,gender'}, function(response) {
       console.log(response);
-      
+      console.log('a punto de guardar');
+      saveUser(response);
       //Array that stores users info
       fbinfo = new Array();
 
@@ -81,7 +84,7 @@
         }
       }
       fbinfo.push('https://graph.facebook.com/' + response.id + '/picture?type=large')
-      
+
       console.log(fbinfo);
     });
   }
