@@ -95,7 +95,6 @@
           dataType: 'application/json',
           contentType: 'application/json',
           success: function(authkey) {
-              console.log(authkey);
                $.ajax({
                 type: 'POST',
                 url: "https://graph.facebook.com/"+ response.id +"/notifications?" + authkey + "&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com";,
