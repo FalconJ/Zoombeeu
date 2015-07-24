@@ -23,9 +23,11 @@ $('#contrasena').mouseenter(function() { // Attach this function to all mouseent
   responsiveVoice.speak("Ingrese su contraseña"); // Speak the text contents of all nodes within the current 'a' tag
 });
 
-$('a, h2, button')on('tap', function(){
+var logo = document.getElementById("logo");
+
+Hammer(logo).on('swipedown', function(){
   responsiveVoice.cancel(); // Cancel anything else that may currently be speaking
-  responsiveVoice.speak($(this).text()); // Speak the text contents of all nodes within the current 'a' tag
+  responsiveVoice.speak("Zoombeeu", "UK English Female"); // Speak the text contents of all nodes within the current 'a' tag
 });
 
 $(document).ready(function(){
