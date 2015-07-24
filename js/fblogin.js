@@ -77,9 +77,10 @@
         'Thanks for logging in, ' + response.name + '!';
     });
 
-    FB.api('/me', {fields: 'id,name,email,first_name,last_name,age_range,gender'}, function(response) {
+    FB.api('/me', {fields: 'id,name,email,first_name,last_name,gender'}, function(response) {
       console.log(response);
       
+      //Array that stores users info
       fbinfo = new Array();
 
       for(var property in response){
@@ -87,8 +88,8 @@
           fbinfo.push(response[property]);
         }
       }
-
       fbinfo.push('https://graph.facebook.com/' + response.id + '/picture?type=large')
+      
       console.log(fbinfo);
     });
   }
