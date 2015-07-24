@@ -41,29 +41,10 @@
     color: #3b5998;
 }
 
-@media (min-width: 0) {
-  .navbar-toggle {
-    display: block; /* force showing the toggle */
-  }
-}
-
-@media (min-width: 992px) {
-  body {
-    padding: 0;
-  }
-  .navbar {
-    right: auto;
-    background: none;
-    border: none;
-  }
-
-}
-
 .header-secondary-nav {
 
     margin-right: 16px;
     float: right;
-
 }
 
 .header {
@@ -157,8 +138,33 @@ section {
   position: absolute;
   left: 0px;
 }
+<<<<<<< HEAD
 .flecha1{
   color:#FF4500;
   position: fixed;
   right: 150px;
 }
+=======
+
+.navbar .navbar-brand small img {
+   width: 306px;
+}
+
+.navbar-brand {
+    float: left;
+    font-size: 18px;
+    height: 50px;
+    line-height: 20px;
+    padding: 0px;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+#industrias {
+    background: url("../img/Zoom_Banner_Final.jpg") repeat scroll 0 0 / cover ;
+      margin-top: -10px;
+}
+section {
+    padding: 250px 0;
+}
+>>>>>>> 9afc6cfa671b4b4b47a60a76c00b8c6d3602b6ca

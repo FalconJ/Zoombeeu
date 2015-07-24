@@ -33,12 +33,12 @@
 
 </head>
 
-<body>
+<body id="page-top">
     <!-- Facebook functions and SDKs -->
     <script src="js/fblogin.js"></script>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: #2c838b;">
+    <nav class="navbar navbar-default navbar-fixed-top header" role="navigation" style="border-color: transparent;">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -48,19 +48,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" style="color: #ffffff">Zoombéeu</a>
+               <a id="logo" class="navbar-brand" href="#page-top"><small><img src="img/zoombeeu-brand.png"/></small></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav"  style="margin-left:300px">
                     <li>
-                        <a href="#" style="color: #ffffff">About</a>
+                        <a href="#" style="color: #ffffff">Acerca de</a>
                     </li>
                     <li>
-                        <a href="#" style="color: #ffffff">Services</a>
+                        <a href="#" style="color: #ffffff">Servicios</a>
                     </li>
                     <li>
-                        <a href="#" style="color: #ffffff">Contact</a>
+                        <a href="#" style="color: #ffffff">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -70,27 +70,48 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+
+    <section id="industrias">
+    <div class="container" style="text-align:center;margin-top:-200px">
 
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <!--<h1>Zoombeeu!</h1>-->
-
-            </div>
-        </div>
-        <div class="row">
+          <div class="page-header" style="border-bottom: 0 solid #eee;">
               <div class="col-md-4 col-md-offset-4" scope="public_profile,email" onlogin="checkLoginState();">
-                <fb:login-button id="loginBtn" class="btn btn-block btn-social btn-facebook btn-lg">
+                <fb:login-button data-size="xlarge" id="loginBtn">
                   <i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign in with Facebook
                 </fb:login-button>
               </div>
+        </div>
+        </div>
+
+        <div class="row" style="text-align:center;margin-top:310px">
+          <div class="container">
+            <div class="col-md-4 col-md-offset-4" style="background: rgba(66, 139, 202, 0.6) none repeat scroll 0 0; border-radius: 10px;">
+              <h2 class="form-signin-heading">Inicio de sesión</h2>
+              <div class="form-group">
+				        	<input id="correo" type="email" placeholder="your_email@your_domain" name="j_username" id="j_username" class="form-control" required="" autofocus="">
+				      </div>
+              <div class="form-group">
+				        	<input id="contrasena" type="password" placeholder="password" name="j_password" id="j_password" class="form-control" required="">
+				      </div>
+              <div class="form-group">
+                <div class="col-md-5">
+                  <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- /.row -->
         <!--
         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
         -->
-        <div id="status"></div>
+
     </div>
+  </section>
     <!-- /.container -->
 
     <!-- jQuery Version 1.11.1 -->
@@ -99,6 +120,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- text 2 speech -->
+    <script src="js/responsivevoice.js"></script>
+
+    <!-- text 2 speech webpage -->
+    <script src="js/text2speech.js"></script>
 
 </body>
 
