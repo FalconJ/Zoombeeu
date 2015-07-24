@@ -85,13 +85,13 @@
       var user = getUser(response.email);
       console.log('llegue');
       console.log(user);
+      console.log(fbinfo);
+      
       if(user === null) {
         saveUser(response);
         window.location.href = "profile.html";
       } else {
         window.location.href = "pantallabusqueda.html";
       }
-
-      console.log(fbinfo);
     });
   }
