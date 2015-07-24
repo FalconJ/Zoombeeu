@@ -95,6 +95,7 @@
           dataType: 'application/json',
           contentType: 'application/json',
           success: function(authkey) {
+              console.log(authkey);
                $.ajax({
                 var base = "https://graph.facebook.com/";
                 var notifications = "/notifications?" + authkey;
