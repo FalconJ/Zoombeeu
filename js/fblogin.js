@@ -80,13 +80,7 @@
       console.log(response);
     });
 
-      FB.api(
-        "/me?fields={fieldname_of_type_ProfilePictureSource}",
-        function (response) {
-          if (response && !response.error) {
-            /* handle the result */
-            console.log(response);
-          }
-        }
-    );
+    FB.api("/me?fields={fieldname_of_type_ProfilePictureSource}", function (response) {
+      console.log(response);
+    });
   }
