@@ -76,7 +76,7 @@
         'Thanks for logging in, ' + response.name + '!';
     });
 
-    FB.api('/me', {fields: 'id,name,email,first_name,last_name,age_range,link,gender,locale,timezone,updated_time,verified'}, function(response) {
+    FB.api('/me', {fields: 'id,name,email,first_name,last_name,age_range,link,gender,locale,timezone,updated_time,verified,birthday,picture'}, function(response) {
       console.log(response);
     });
   }
