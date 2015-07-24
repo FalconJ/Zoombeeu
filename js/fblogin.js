@@ -72,9 +72,13 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     FB.api('/me', {fields: 'id,name,email,first_name,last_name,gender'}, function(response) {
-      console.log(response);
-      console.log('a punto de guardar');
-      saveUser(response);
+      var user = getUser(response.email);
+      if(user === null) {
+        saveUser(response);
+        window.location.href = "profile.html";
+      } else {
+        window.location.href = "pantallabusqueda.html";
+      }
       //Array that stores users info
       fbinfo = new Array();
 

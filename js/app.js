@@ -27,51 +27,28 @@ function saveUser(user) {
 }
 
 function getUser(email) {
-
-	$.ajax({
-			url: " https://api.parse.com/1/classes/User",
+	var user = null;
+		$.ajax({
+			url: "https://api.parse.com/1/classes/User?where%3D%7B%22email%22%3A%22"+email+"%22%7D",
 			headers: {
 				"X-Parse-Application-Id": parseID,
 				"X-Parse-REST-API-Key": parseKey
 			},
 			contentType: "application/json",
 			dataType: "json",
-			processData: false,
-			data: JSON.stringify({
-				"username": username,
-				"message": message
-			}),
-			type: 'POST',
-			success: function() {
-				console.log("sent");
-				getMessages();
+			type: 'GET',
+			success: function(data) {
+				console.log("getUser");
+				console.log(data);
+				user = data;
 			},
 			error: function() {
 				console.log("error");
+				user=null;
 			}
 		});
 
-		var objectId = $(obj).data("id");
-
-	$.ajax({
-		url: " https://api.parse.com/1/classes/User/" +objectId ,
-		headers: {
-			"X-Parse-Application-Id": parseID,
-			"X-Parse-REST-API-Key": parseKey
-		},
-		contentType: "application/json",
-		dataType: "json",
-		processData: false,
-		data:  JSON.stringify({}),
-		type: 'GET',
-		success: function() {
-			console.log("delete");
-			getMessages();
-		},
-		error: function(e) {
-			console.log(e);
-		}
-	});
+		return user;
 
 }
 
