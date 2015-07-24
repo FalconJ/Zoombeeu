@@ -23,7 +23,7 @@ $('#contrasena').mouseenter(function() { // Attach this function to all mouseent
   responsiveVoice.speak("Ingrese su contraseña"); // Speak the text contents of all nodes within the current 'a' tag
 });
 
-$('a, h2, button')on('swipe', function(){
+$('a, h2, button')on('tap', function(){
   responsiveVoice.cancel(); // Cancel anything else that may currently be speaking
   responsiveVoice.speak($(this).text()); // Speak the text contents of all nodes within the current 'a' tag
 });
