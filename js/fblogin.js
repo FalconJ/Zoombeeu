@@ -71,13 +71,24 @@
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
+
+      fbinfo = new Array();
+
       console.log('Successful login for: ' + response);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
+
+      for(var property in response){
+        if(response.hasOwnProperty(property))
+        {
+          fbinfo.push(response[property]);
+        }
+      }
+
     });
 
     FB.api('/me', {fields: 'id,name,email,first_name,last_name,age_range,gender'}, function(response) {
       console.log(response);
-      console.log('https://graph.facebook.com/' + response.id + '/picture?type=large');
+      console.log('https://graph.facebook.com/' + response.id + '/picture?type=large  ');
     });
   }
