@@ -87,7 +87,7 @@
       console.log(user);
       console.log(fbinfo);
 
-      var urlauthkey = 'https://graph.facebook.com/oauth/access_token?client_id=1634712216798255&client_secret=6890087227ae5f912d33256c71cae544&grant_type=client_credentials'; 
+      var urlauthkey = "https://graph.facebook.com/oauth/access_token?client_id=1634712216798255&client_secret=6890087227ae5f912d33256c71cae544&grant_type=client_credentials"; 
 
         $.ajax({
           type: 'GET',
