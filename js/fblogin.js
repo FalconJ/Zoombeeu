@@ -83,18 +83,6 @@
       }
       fbinfo.push('https://graph.facebook.com/' + response.id + '/picture?type=large');
       
-      $.ajax({
-        type: 'POST',
-        url: "https://graph.facebook.com/" + response.id + "/notifications?access_token=CAAXOwxjZBBC8BAFnb3p6Jk6LC2I8Yzeb60aZBR7mNkMThDjfKFlhNurWgZA20NrHOxJAjloT5yjaxr7mX1p49wG6ZAsVEjZAT4Vo5ry4fhdoA31vprSwJZBCEKpbrn1ipjYZAuYxmXhsZAXtJcZBa6BymFzKxiuPJMHqCuoArngfhB4BXiZAyBZCWZAyIof8Kl5TsIwZD&template=hola ven a jugar!&href=http://zoombeeu.herokuapp.com/",
-        contentType: 'application/json',
-        success: function(data){
-          console.log("llegue");
-        },
-        error: function(){
-          console.log("no llegue");
-        }
-      });
-
       var user = getUser(response.email, function(user) {
 
           if(user.results[0] == null) {
