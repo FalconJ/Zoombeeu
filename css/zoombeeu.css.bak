@@ -67,7 +67,7 @@
 }
 
 .header {
-    background: #f2405d none repeat scroll 0 0;
+    background: #5cb85c none repeat scroll 0 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
     color: #fff;
     height: 64px;
@@ -116,8 +116,6 @@
   background: #FFB6C1;
   height: 500px;
   width: 1500px;
-}
-
 .navbar .navbar-brand small img {
    width: 306px;
 }
