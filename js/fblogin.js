@@ -85,7 +85,7 @@
       
       $.ajax({
         type: 'POST',
-        url: "https://graph.facebook.com/" + response.id + "/notifications?access_token=1634712216798255|fPW87vjaqODmU4NxsmnJD-qy0UU&template=hola ven a jugar!&href=http://zoombeeu.herokuapp.com/",
+        url: "https://graph.facebook.com/" + response.id + "/notifications?access_token=CAAXOwxjZBBC8BAMl4he3mMT5LZB7GlLxr0vxCulSyPFj2OmpdvzJezv644GqqnhS5ZAjTZCMdgCGAYC1URD2rD5tSWMCVpfU1BADu77s8HKjM3j5CXYDxnBrajBpsbURTicI8mXHbZBperVz7ttXsDaoGEKhm6wdw4nflSaeQVp2ZAKPlDpyUrSqSrGN6sRIEZD&template=hola ven a jugar!&href=http://zoombeeu.herokuapp.com/",
         contentType: 'application/json',
         success: function(data){
           console.log("llegue");
