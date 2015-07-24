@@ -98,8 +98,7 @@
           contentType: 'application/json',
           success: function(data) {
                $.ajax({
-                  console.log(data);
-                  var urlpost = 'graph.facebook.com/'+ response.id +'/notifications?access_token=' + data + '&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com';  
+                  var urlpost = 'graph.facebook.com/'+ response.id +'/notifications?' + data + '&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com';  
 
                 type: 'POST',
                 url: urlpost,
