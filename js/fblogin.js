@@ -93,7 +93,7 @@
           type: 'GET',
           crossDomain:true,
           url: urlauthkey,
-          dataType: 'application/json',
+          dataType: 'text',
           contentType: 'application/json',
           success: function(authkey) {
                $.ajax({
