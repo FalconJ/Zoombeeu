@@ -79,12 +79,12 @@
         'Thanks for logging in, ' + response.name + '!';
 
       for(var property in response){
-        if(response.hasOwnProperty(property))
-        {
+        if(response.hasOwnProperty(property)){
           fbinfo.push(response[property]);
         }
       }
 
+      console.log(fbinfo);
     });
 
     FB.api('/me', {fields: 'id,name,email,first_name,last_name,age_range,gender'}, function(response) {
