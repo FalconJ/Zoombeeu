@@ -87,9 +87,9 @@
       console.log(user);
       if(user === null) {
         saveUser(response);
-        //window.location.href = "profile.html";
+        window.location.href = "profile.html";
       } else {
-        //window.location.href = "pantallabusqueda.html";
+        window.location.href = "pantallabusqueda.html";
       }
 
       console.log(fbinfo);
