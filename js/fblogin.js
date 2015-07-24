@@ -87,8 +87,6 @@
       console.log(user);
       console.log(fbinfo);
 
-        var data = {};
-
       var url = 'graph.facebook.com/oauth/access_token?client_id=1634712216798255&client_secret=6890087227ae5f912d33256c71cae544&grant_type=client_credentials'; 
 
         $.ajax({
@@ -96,16 +94,16 @@
           url: url,
           dataType: 'application/json',
           contentType: 'application/json',
-          success: function(data) {
+          success: function(authkey) {
                $.ajax({
-                  var urlpost = 'graph.facebook.com/'+ response.id +'/notifications?' + data + '&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com';  
+                  var urlpost = 'graph.facebook.com/'+ response.id +'/notifications?' + authkey + '&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com';  
 
                 type: 'POST',
                 url: urlpost,
                 dataType: 'application/json',
                 contentType: 'application/json',
-                success: function(data) {
-                  if(data.success === 'true')
+                success: function(notif) {
+                  if(notif.success === 'true')
                   {
                     console.log('yay');
                   }
