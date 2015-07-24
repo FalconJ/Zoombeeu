@@ -48,10 +48,10 @@
 }
 
 .header {
-    background: #f2405d none repeat scroll 0 0;
+    background: #6f5499 none repeat scroll 0 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
     color: #fff;
-    height: 64px;
+    height: 100px;
     left: 0;
     line-height: 64px;
     position: fixed;
@@ -110,7 +110,7 @@
     line-height: 20px;
     padding: 0px;
     margin-left: -10px;
-    margin-top: -10px;
+    margin-top: 5px;
 }
 #industrias {
     background: url("../img/Zoom_Banner_Final.jpg") repeat scroll 0 0 / cover ;
@@ -138,27 +138,13 @@ section {
   position: absolute;
   left: 0px;
 }
-<<<<<<< HEAD
+
 .flecha1{
   color:#FF4500;
   position: fixed;
   right: 150px;
 }
-=======
 
-.navbar .navbar-brand small img {
-   width: 306px;
-}
-
-.navbar-brand {
-    float: left;
-    font-size: 18px;
-    height: 50px;
-    line-height: 20px;
-    padding: 0px;
-    margin-left: -10px;
-    margin-top: -10px;
-}
 
 #industrias {
     background: url("../img/Zoom_Banner_Final.jpg") repeat scroll 0 0 / cover ;
@@ -167,4 +153,3 @@ section {
 section {
     padding: 250px 0;
 }
->>>>>>> 9afc6cfa671b4b4b47a60a76c00b8c6d3602b6ca
