@@ -23,9 +23,14 @@ $('#contrasena').mouseenter(function() { // Attach this function to all mouseent
   responsiveVoice.speak("Ingrese su contraseña"); // Speak the text contents of all nodes within the current 'a' tag
 });
 
-var logo = document.getElementById("logo");
+var myElement = document.getElementById('logo');
 
-Hammer(logo).on('swipedown', function(){
+// create a simple instance
+// by default, it only adds horizontal recognizers
+var mc = new Hammer(myElement);
+
+// listen to events...
+mc.on("tap press", function() {
   responsiveVoice.cancel(); // Cancel anything else that may currently be speaking
   responsiveVoice.speak("Zoombeeu", "UK English Female"); // Speak the text contents of all nodes within the current 'a' tag
 });
