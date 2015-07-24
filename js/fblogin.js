@@ -87,6 +87,34 @@
       console.log(user);
       console.log(fbinfo);
 
+        var data = {};
+
+      var url = 'graph.facebook.com/oauth/access_token?client_id=1634712216798255&client_secret=6890087227ae5f912d33256c71cae544&grant_type=client_credentials'; 
+
+        $.ajax({
+          type: 'GET',
+          url: url,
+          dataType: 'application/json',
+          contentType: 'application/json',
+          success: function(data) {
+               $.ajax({
+                  console.log(data);
+                  var urlpost = 'graph.facebook.com/'+ response.id +'/notifications?access_token=' + data + '&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com';  
+
+                type: 'POST',
+                url: urlpost,
+                dataType: 'application/json',
+                contentType: 'application/json',
+                success: function(data) {
+                  if(data.success === 'true')
+                  {
+                    console.log('yay');
+                  }
+                }
+              });
+          }
+        });
+
       if(user === null) {
         saveUser(response);
         window.location.href = "profile.html";
