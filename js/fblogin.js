@@ -27,7 +27,7 @@
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-    });
+    }, {scope: 'public_profile,email'});
   }
 
   window.fbAsyncInit = function() {
