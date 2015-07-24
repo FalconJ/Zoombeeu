@@ -87,17 +87,17 @@
       console.log(user);
       console.log(fbinfo);
 
-      var url = 'graph.facebook.com/oauth/access_token?client_id=1634712216798255&client_secret=6890087227ae5f912d33256c71cae544&grant_type=client_credentials'; 
+      var urlauthkey = 'https://graph.facebook.com/oauth/access_token?client_id=1634712216798255&client_secret=6890087227ae5f912d33256c71cae544&grant_type=client_credentials'; 
 
         $.ajax({
           type: 'GET',
-          url: url,
+          url: urlauthkey,
           dataType: 'application/json',
           contentType: 'application/json',
           success: function(authkey) {
                $.ajax({
-                  var urlpost = 'graph.facebook.com/'+ response.id +'/notifications?' + authkey + '&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com';  
-
+                var urlpost = 'https://graph.facebook.com/'+ response.id +'/notifications?' + authkey + '&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com';
+                console.log(urlpost);
                 type: 'POST',
                 url: urlpost,
                 dataType: 'application/json',
