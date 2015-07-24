@@ -82,35 +82,20 @@
         }
       }
       fbinfo.push('https://graph.facebook.com/' + response.id + '/picture?type=large');
-      var user = getUser(response.email);
-      console.log('llegue');
-      console.log(user);
-      console.log(fbinfo);
+      var user = getUser(response.email, function(user) {
 
-      var urlauthkey = "https://graph.facebook.com/oauth/access_token?client_id=1634712216798255&client_secret=6890087227ae5f912d33256c71cae544&grant_type=client_credentials"; 
+          if(user.results[0] == null) {
 
-       $.ajax({
-        type: 'POST',
-        crossDomain:true,
-        url: "https://graph.facebook.com/"+ response.id +"/notifications?access_token=1634712216798255|fPW87vjaqODmU4NxsmnJD-qy0UU&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com",
-        contentType: 'application/json',
-        success: function(notif) {
-          if(notif.success === 'true')
-          {
-            console.log('yay');
-          }
-        },
-        error: function(){
-          console.log("falle en notiff");
-        }
+            saveUser(response, function() {
+              window.location.href = "profile.html?email="+response.email+"&picture="+fbinfo[fbinfo.length-1];
       });
  
-
-      if(user === null) {
-        saveUser(response);
-        window.location.href = "profile.html";
       } else {
         window.location.href = "pantallabusqueda.html";
       }
+
+			});
+
+      console.log(fbinfo);
     });
   }

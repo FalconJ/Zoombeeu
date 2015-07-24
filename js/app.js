@@ -1,7 +1,8 @@
 var parseID="Ta2cIHkL0xx3W4M1zpDoqXngkD95dbdXqXEBxMSZ";
 var parseKey="LPWWjQAPLBj8mf46jXXiZqxS19MigVZ0k2yk40GQ";
+var profileTemplate;
 
-function saveUser(user) {
+function saveUser(user, callback) {
 	var flag = false;
 	$.ajax({
 			url: " https://api.parse.com/1/classes/User",
@@ -14,10 +15,7 @@ function saveUser(user) {
 			processData: false,
 			data: JSON.stringify(user),
 			type: 'POST',
-			success: function() {
-				console.log("sent");
-				flag = true;
-			},
+			success: callback,
 			error: function() {
 				console.log("error");
 			}
@@ -26,7 +24,7 @@ function saveUser(user) {
 		return flag;
 }
 
-function getUser(email) {
+function getUser(email, callback) {
 	var user = null;
 		$.ajax({
 			url: "https://api.parse.com/1/classes/User?where%3D%7B%22email%22%3A%22"+email+"%22%7D",
@@ -37,11 +35,7 @@ function getUser(email) {
 			contentType: "application/json",
 			dataType: "json",
 			type: 'GET',
-			success: function(data) {
-				console.log("getUser");
-				console.log(data);
-				user = data;
-			},
+			success: callback,
 			error: function() {
 				console.log("error");
 				user=null;
@@ -64,7 +58,7 @@ function getMessages() {
 		type: 'GET',
 		success: function(data) {
 			console.log("get");
-			updateView(data);
+			//updateView(data);
 		},
 		error: function() {
 			console.log("error");
@@ -72,13 +66,19 @@ function getMessages() {
 	});
 }
 
-function updateView(messages) {
+function updateProfileView(user) {
+	profileTemplate = '';
 	var table=$("<div class='container'>");
 	table.html('');
-	$.each(messages.results, function (index, value) {
-		var trEl=$('<tr><td>'+value.username+'</td><td>'+value.message+'</td></tr>');
-		table.append(trEl);
-	});
+		table.append('<div clas="row">');
+				table.append("<div class='col-sm-5 .col-md-6'>");
+				table.append("<img id='imgUser></img>");
+				table.append("</div>");
+				table.append("<div class='col-sm-5 .col-md-6'>"+user.name);
+				table.append("</div>");
+		table.append("</div>");
+	table.append("</div>");
+	profileTemplate = table;
+	console.log(profileTemplate);
 
-	console.log(messages);
 }

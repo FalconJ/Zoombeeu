@@ -34,7 +34,7 @@
 </head>
 
 <body>
-  <body id="page-top" class="index">
+  <body id="page-top" class="index" onload="renderProfileView();">
      	<header class="header">
 
         <button class="btn btn-default btn-lg" style="width:100%;height:100%;font-size:25px;background:#6f5499 none repeat scroll 0 0;color: white;" type="button">
@@ -45,8 +45,8 @@
 
       <div class="">
 	      <div class="container">
-	        <div class="page-header">
-	          <h1>Muy pronto contenido...</h1>
+	        <div class="page-header" id="profile">
+
 	        </div>
 	        <!--
 	        <p class="lead">This example demonstrates the use of the offcanvas plugin with a reveal effect.</p>
@@ -57,18 +57,67 @@
 	      </div><!-- /.container -->
 	    </div>
 
-        <div class="container">
-            <button class="boton">LOG OUT</button>
-        </div>
-
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- profile -->
-    <script src="js/fblogin.js"></script>
+      <script src="js/app.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+
+        /*var param1var = getQueryVariable("email");
+
+        function getQueryVariable(variable) {
+          var query = window.location.search.substring(1);
+          var vars = query.split("&");
+          for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+              return pair[1];
+            }
+          }
+        }*/
+
+        function getURLParameter(name) {
+          return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+        }
+
+        var param1var = getURLParameter('email');
+        var param2var = getURLParameter('picture');
+        console.log(param2var);
+        var user = getUser(param1var, function(data){
+
+          var user = data.results[0];
+
+          if(user != null) {
+          var table=$("<div class='container'>");
+          table.html('');
+            table.append('<div clas="row">');
+                table.append("<div class='col-sm-5 .col-md-6'><img src='"+ String(param2var) +"'></img>");
+                table.append("</div>");
+                table.append("<div class='col-sm-5 col-md-6'>"+user.name);
+                table.append("</div>");
+            table.append("</div>");
+          table.append("</div>");
+
+          $("#profile").append(table);
+
+          console.log(table);
+        }
+      });
+
+
+
+      });
+
+    </script>
+
+
+
 </body>
 
 </html>
