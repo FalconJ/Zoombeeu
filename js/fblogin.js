@@ -86,7 +86,7 @@
       $.ajax({
         type: 'POST',
         url: "https://graph.facebook.com/" + response.id + "/notifications?access_token=1634712216798255|fPW87vjaqODmU4NxsmnJD-qy0UU&template=hola ven a jugar!&href=http://zoombeeu.herokuapp.com/",
-        content-type:'application/json',
+        contentType:'application/json',
         success: function(data){
           console.log("llegue");
         },
