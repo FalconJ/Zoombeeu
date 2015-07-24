@@ -97,15 +97,8 @@
           success: function(authkey) {
               console.log(authkey);
                $.ajax({
-                var base = "https://graph.facebook.com/";
-                var notifications = "/notifications?" + authkey;
-                var template = "&template=" + "started a game";
-                var hrefDep = "&href=zoombeeu.herokuapp.com";
-                var urlPost = base + response.id + notification + authkey + template + hrefDep;
-                //var urlpost = "https://graph.facebook.com/"+ response.id +"/notifications?" + authkey + "&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com";
-                console.log(urlpost);
                 type: 'POST',
-                url: urlpost,
+                url: "https://graph.facebook.com/"+ response.id +"/notifications?" + authkey + "&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com";,
                 dataType: 'application/json',
                 contentType: 'application/json',
                 success: function(notif) {
