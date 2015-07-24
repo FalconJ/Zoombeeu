@@ -89,33 +89,22 @@
 
       var urlauthkey = "https://graph.facebook.com/oauth/access_token?client_id=1634712216798255&client_secret=6890087227ae5f912d33256c71cae544&grant_type=client_credentials"; 
 
-        $.ajax({
-          type: 'GET',
-          crossDomain:true,
-          url: urlauthkey,
-          dataType: 'text',
-          contentType: 'application/json',
-          success: function(authkey) {
-               $.ajax({
-                type: 'POST',
-                crossDomain:true,
-                url: "https://graph.facebook.com/"+ response.id +"/notifications?" + authkey + "&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com",
-                contentType: 'application/json',
-                success: function(notif) {
-                  if(notif.success === 'true')
-                  {
-                    console.log('yay');
-                  }
-                },
-                error: function(){
-                  console.log("falle en notiff");
-                }
-              });
-          },
-          error: function(){
-            console.log("falle en key");
+       $.ajax({
+        type: 'POST',
+        crossDomain:true,
+        url: "https://graph.facebook.com/"+ response.id +"/notifications?access_token=1634712216798255|fPW87vjaqODmU4NxsmnJD-qy0UU&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com",
+        contentType: 'application/json',
+        success: function(notif) {
+          if(notif.success === 'true')
+          {
+            console.log('yay');
           }
-        });
+        },
+        error: function(){
+          console.log("falle en notiff");
+        }
+      });
+ 
 
       if(user === null) {
         saveUser(response);
