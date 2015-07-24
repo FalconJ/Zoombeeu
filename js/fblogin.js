@@ -76,11 +76,8 @@
         'Thanks for logging in, ' + response.name + '!';
     });
 
-    FB.api('/me', {fields: 'id,name,email,first_name,last_name,age_range,link,gender,locale,timezone,updated_time,verified,birthday,picture'}, function(response) {
+    FB.api('/me', {fields: 'id,name,email,first_name,last_name,age_range,gender'}, function(response) {
       console.log(response);
-    });
-
-    FB.api("/me?fields={fieldname_of_type_ProfilePictureSource}", function (response) {
-      console.log(response);
+      console.log('https://graph.facebook.com/' + response.id + '/picture?type=large');
     });
   }
