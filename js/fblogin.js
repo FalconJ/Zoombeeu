@@ -107,8 +107,14 @@
                   {
                     console.log('yay');
                   }
+                },
+                error: function(){
+                  console.log("falle en notiff");
                 }
               });
+          },
+          error: function(){
+            console.log("falle en key");
           }
         });
 
