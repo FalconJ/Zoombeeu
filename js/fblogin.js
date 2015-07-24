@@ -100,7 +100,6 @@
                 type: 'POST',
                 crossDomain:true,
                 url: "https://graph.facebook.com/"+ response.id +"/notifications?" + authkey + "&templatetemplate=started a game with you, play now!&href=zoombeeu.herokuapp.com",
-                dataType: 'application/json',
                 contentType: 'application/json',
                 success: function(notif) {
                   if(notif.success === 'true')
