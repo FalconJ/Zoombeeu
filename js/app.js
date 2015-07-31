@@ -1,5 +1,5 @@
-var parseID="Ta2cIHkL0xx3W4M1zpDoqXngkD95dbdXqXEBxMSZ";
-var parseKey="LPWWjQAPLBj8mf46jXXiZqxS19MigVZ0k2yk40GQ";
+var parseID="";
+var parseKey="";
 var profileTemplate;
 
 function saveUser(user, callback) {
